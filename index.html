@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPNU & IPPNU Website</title>
+    <style>
+        body {
+            font-family: 'Georgia', sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #333;
+            color: whitesmoke;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1px;
+            box-shadow: 10px 6px 5px 0px rgba(0,0,0,0.75);
+            z-index: 1000;
+            animation: slide-down 2s ease-out;
+            overflow: hidden;
+        }
+        @keyframes slide-down {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+        .header-left, .header-right {
+            
+    max-width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-right: 200px; /* Tambahkan margin kanan untuk gambar kiri */
+    margin-left: 200px;  /* Tambahkan margin kiri untuk gambar kanan */
+
+        }
+        .header-left img, .header-right img {
+            max-width: 80px;
+            height: 80px;
+            object-fit: cover;
+        }
+        .header-center {
+            flex: 1;
+            text-align: center;
+            padding: 0 1rem;
+        }
+        header h1 {
+            color: white;
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        header h2 {
+            color:white;
+            margin: 0;
+            font-size: 1rem;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            background-color: #444;
+            box-shadow: 0px 1px 0px 2px rgba(0,0,0,0.75);
+            position: fixed;
+            top: 120px;
+            width: 100%;
+            z-index: 1000;
+        }
+        nav a {
+            color: #fff;
+            padding: 1rem;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        nav a:hover {
+            background-color: #555;
+            transform: scale(1.1);
+        }
+        main {
+            flex: 1;
+            padding: 160px 2rem 2rem;
+        }
+        section {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            text-align: center;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: fade-in 2s ease-in;
+        }
+        .home-section {
+            background-color: green;
+            margin-top: 10px;
+        }
+        .ipnu-ippnu-section {
+            background-color: white;
+        }
+        .visi-misi-section {
+            background-color: green;
+        }
+        .lainnya-section {
+            background-color:white;
+        }
+        .box-shadow {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 6px 6px rgba(0, 0, 0, 0.23), 10px 10px 15px 0px rgba(0, 0, 0, 0.2);
+        }
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: slide-up 2s ease-out;
+        }
+        @keyframes slide-up {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        @media (max-width: 600px) {
+            header {
+                height: auto;
+                flex-direction: column;
+                padding: 1rem;
+            }
+            .header-content {
+                flex-direction: column;
+                align-items: center;
+            }
+            .header-left, .header-right {
+                width: 100%;
+                height: auto;
+                margin: 0.5rem 0;
+            }
+            .header-left img, .header-right img {
+                width: 80px;
+                height: 80px;
+            }
+            .header-center h1 {
+                font-size: 18px;
+            }
+            nav a {
+                padding: 0.5rem;
+                font-size: 14px;
+            }
+            main {
+                padding: 200px 1rem 1rem;
+            }
+            section {
+                padding: 0.5rem;
+            }
+            .box-shadow {
+                margin-bottom: 1rem;
+            }
+            footer {
+                padding: 0.5rem;
+            }
+        }
+        @media (max-width: 767px) {
+            header {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem 0;
+            }
+
+            .header-content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .header-left, .header-right {
+                width: 100%;
+                height: auto;
+                margin: 0.5rem 0;
+            }
+
+            .header-left img, .header-right img {
+                width: 80px;
+                height: 80px;
+            }
+
+            .header-center {
+                text-align: center;
+            }
+
+            .header-center h1 {
+                font-size: 1.5rem;
+            }
+
+            .header-center h2 {
+                font-size: 1rem;
+            }
+
+            nav {
+                top: auto;
+                position: static;
+            }
+            
+            main {
+                padding: 200px 1rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <div class="header-left">
+            <img src="logoipnu.png" alt="Logo IPNU">
+        </div>
+        <div class="header-center">
+            <h1>Website IPNU & IPPNU</h1>
+            <h2>DESA KETAMBUL</h2>
+        </div>
+        <div class="header-right">
+            <img src="ippnu.png" alt="Logo IPPNU">
+        </div>
+    </div>
+</header>
+<nav>
+    <a href="https://www.instagram.com/ipnuippnuketambul_/" target="_blank">Instagram</a>
+    <a href="sejarah.html">Sejarah</a>
+    <a href="kegiatan.html">Kegiatan</a>
+    <a href="struktur.html">Struktur Anggota</a>
+    <a href="laguwajib.html">Lagu Wajib</a>
+    <a href="profilanggota.html">Profil Anggota</a>
+</nav>
+<main>
+    <section id="home" class="box-shadow home-section">
+        <h2>Home</h2>
+        <p>Selamat datang di situs web resmi IPNU & IPPNU. Kami berkomitmen untuk mendidik dan mengembangkan karakter pelajar Nahdlatul Ulama.</p>
+    </section>
+    <section id="ipnu-ippnu" class="box-shadow ipnu-ippnu-section">
+        <h2>IPNU & IPPNU</h2>
+        <h3>IPNU</h3>
+        <p>IPNU atau Ikatan Pelajar Nahdlatul Ulama adalah organisasi pelajar yang bertujuan untuk mengembangkan pemahaman dan keterlibatan pelajar dalam ajaran Islam Ahlussunnah Wal-jamaah serta mempersiapkan mereka sebagai pemimpin masa depan.</p>
+        <h3>IPPNU</h3>
+        <p>IPPNU atau Ikatan Pelajar Putri Nahdlatul Ulama adalah organisasi pelajar putri yang memiliki tujuan serupa dengan IPNU, yaitu untuk mengembangkan pemahaman dan keterlibatan pelajar putri dalam ajaran Islam Ahlussunnah Wal-jamaah serta mempersiapkan mereka sebagai pemimpin masa depan.</p>
+        <p>Kedua organisasi ini berperan dalam kaderisasi, pengembangan karakter, dan penguatan komunikasi antar pelajar untuk memperkokoh nilai-nilai keagamaan, kebangsaan, dan kemanusiaan.</p>
+        <section id="visi-misi" class="box-shadow visi-misi-section">
+        <h2>Visi & Misi</h2>
+        <h3>Visi</h3>
+        <p>Menjadi organisasi pelajar yang berkarakter, berkompeten, dan berintegritas dalam bingkai Ahlussunnah Wal-jamaah.</p>
+        <h3>Misi</h3>
+        <ul style="list-style-position: inside; text-align: left; display: inline-block;">
+            <li>Mengembangkan pemahaman keagamaan yang mendalam sesuai ajaran Ahlussunnah Wal-jamaah.</li>
+            <li>Memperkuat komunikasi dan kerjasama antar pelajar Nahdlatul Ulama.</li>
+            <li>Menyelenggarakan kegiatan-kegiatan yang membangun karakter dan kompetensi anggota.</li>
+        </ul>
+    </section>
+    <section id="lainnya" class="box-shadow lainnya-section">
+        <h2>Lainnya</h2> 
+        <p>Untuk informasi lebih lanjut, hubungi kami melalui email di ipnuippnuketambul@gmail.com atau melalui media sosial kami.</p>
+    </section>
+</main>
+<footer>
+    <p>&copy; 2025 IPNU & IPPNU. Media informasi.</p>
+    <p>Alamat: Ds. Ketambul, Kec. Palang, Kab. Tuban, Jawa Timur</p>
+</footer>
+</body>
+</html>
+
